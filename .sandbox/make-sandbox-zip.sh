@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Builds the Taiga upload from a branch (default sandbox-base) and refuses to finish if anything that must not be uploaded is inside.
+# Builds the sandbox upload from a branch (default sandbox-base) and refuses to finish if anything that must not be uploaded is inside.
 # sandbox-base already has .github, .devcontainer, the Docker files, scripts/, docs/, README.md and the production-server files removed;
 # this script leaves out this .sandbox/ folder and checks that nothing of that kind came back (e.g. from a task branch).
 # Usage (from the repo root): bash .sandbox/make-sandbox-zip.sh [branch] [output dir, default: the repo's parent folder]
