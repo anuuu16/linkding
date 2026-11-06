@@ -5,15 +5,27 @@ Needs Python 3.12–3.14 (3.15 has no `psycopg-binary` build yet) and Node. `req
 
 ## Setup
 
+Run once, from the project folder. Pick one install line:
+
 ```
-python3 -m venv .venv && . .venv/bin/activate
-pip install -r requirements.txt -r requirements-dev.txt     # with uv instead: uv sync
-mkdir -p data/assets data/favicons data/previews
+# with uv (works even if your system Python is 3.15)
+uv sync --python 3.12 && . .venv/bin/activate
+
+# or with pip (python3 must be 3.12-3.14)
+python3 -m venv .venv && . .venv/bin/activate && pip install -r requirements.txt -r requirements-dev.txt
+```
+
+Then:
+
+```
+mkdir -p data/assets data/favicons data/previews     # the SQLite database lives in data/
 python manage.py migrate
 npm install
-npm run build                                               # frontend bundle and themes
+npm run build
 python manage.py createsuperuser --username admin --email a@example.com
 ```
+
+`sqlite3.OperationalError: unable to open database file` means `data/` is missing: run the `mkdir` line, from the project folder. Tests need it too.
 
 ## Run
 
