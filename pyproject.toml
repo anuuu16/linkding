@@ -2,7 +2,7 @@
 name = "linkding"
 version = "1.47.0"
 description = "Self-hosted bookmark manager that is designed be to be minimal, fast, and easy to set up using Docker."
-requires-python = ">=3.12"
+requires-python = ">=3.12,<3.15"
 dependencies = [
     "beautifulsoup4>=4.14.3",
     "bleach>=6.4.0",

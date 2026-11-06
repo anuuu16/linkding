@@ -1,7 +1,7 @@
 # Commands
 
 linkding is a bookmark manager: a Django app (Python) with a small esbuild frontend, on SQLite (no database server to start).
-Needs Python >= 3.12 and Node. `requirements.txt` + `requirements-dev.txt` are the same versions as `uv.lock`, so `uv` is optional.
+Needs Python 3.12–3.14 (3.15 has no `psycopg-binary` build yet) and Node. `requirements.txt` + `requirements-dev.txt` are the same versions as `uv.lock`, so `uv` is optional.
 
 ## Setup
 
